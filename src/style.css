@@ -1,0 +1,253 @@
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+:root {
+    --primary-color: #0F4C75;
+    --secondary-color: #3282B8;
+    --tertiary-color: #BBE1FA;
+    --font-color: white;
+    /* --font-size: 16px; */
+}
+
+body {
+    background-color: var(--primary-color);
+    /* this is cool, clamp sets desired size and adjust depending on window sizing */
+    font-size: clamp(1rem, 2vw, 2rem);
+}
+
+.nav {
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    /* text-align: right; */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 5vh;
+}
+
+.nav-links {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: var(--font-color);
+}
+
+.wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.background {
+    transform: translateZ(-10px) scale(2);
+}
+
+.foreground {
+    transform: translateZ(-5px) scale(1.5);
+}
+
+.cloud-foreground {
+    transform: translateZ(5px) scale(.5);
+}
+
+.background,
+.foreground,
+.cloud-foreground {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.cloud-foreground {
+        opacity: 0.5;
+        margin-top: 600px;
+    
+}
+
+.home-quote-card {
+    padding: 10px;
+    background: var(--primary-color);
+}
+
+h2 {
+    margin: 40rem 10rem 40rem 10rem;
+    background: linear-gradient(90deg, var(--font-color), transparent);
+    background-size: 200%;
+    animation: reveal both linear;
+    animation-timeline: view();
+    background-repeat: no-repeat;
+    animation-range: entry 50% cover 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+h1 {
+    text-decoration: underline;
+    background: linear-gradient(90deg, var(--font-color), transparent);
+    background-size: 200%;
+    animation: reveal both linear;
+    animation-timeline: view();
+    background-repeat: no-repeat;
+    animation-range: entry 50% cover 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+li {
+    list-style-type: none;
+    color: black;
+    font-size: 1rem;
+}
+
+.about {
+    background-color: var(--secondary-color);
+    color: var(--font-color);
+    text-align: center;
+    /* font-size: 1.5rem; */
+}
+
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10rem;
+}
+
+.capabilities-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10rem 10rem 0 10rem;
+}
+
+.card-section {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem 0 20rem 0;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 20rem;
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.1);
+}
+
+.card-title {
+    font-size: 1.5rem;
+}
+
+.card-details {
+    display: none;
+    font-size: 1rem;
+}
+
+.card:hover .card-title {
+    display: none;
+}
+
+.card:hover .card-details {
+    display: block;
+}
+
+.slide-in-bottom {
+    -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+}
+
+p {
+    animation: fade linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 50%;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes reveal {
+    0% {
+        background-position-x: 200%;
+    }
+    100% {
+        background-position-x: 0;
+    }
+}
+
+@keyframes slide-in-bottom {
+    0% {
+        -webkit-transform: translateY(1000px);
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slide-in-bottom {
+    0% {
+        -webkit-transform: translateY(1000px);
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
