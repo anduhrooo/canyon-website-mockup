@@ -51,7 +51,7 @@ export default function About() {
           <p>Canyon Consulting is a woman owned small business that has been providing innovative system solutions to the Department of Defense since 2006. Canyon is unique in that its key employees are seasoned and experienced technical acquisition leaders from both Government and Industry, with an average experience base of 24 years. Moreover, this blend of Department of Defense and commercial sector experience allows for innovative approaches and solutions to critical problem solving, strategic planning, and corporate strategies. Canyon’s employees possess highly technical expertise and experience that comprise of a broad mix; from space and weapon programs to telecommunications and RF/optical systems.</p>
         </div>
         <div className='home-quote-card'>
-          <h2>"Canyon is passionate about warfighters and customers. With them and for them. We support the development and delivery of enabling space technologies—that’s our mission."<br/>Grace Yang, CEO</h2>    
+          <p className='grace-quote'>"Canyon is passionate about warfighters and customers. With them and for them. We support the development and delivery of enabling space technologies—that’s our mission."<br/>Grace Yang, CEO</p>    
         </div>
         
         <div className='capabilities-section'>

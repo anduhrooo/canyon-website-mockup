@@ -86,8 +86,14 @@ header {
 }
 
 .home-quote-card {
-    padding: 10px;
-    background: var(--primary-color);
+    padding: 5px;
+    background: url(/EarthNetwork.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.grace-quote {
+    text-shadow: 2px 2px 4px black;
+    margin: 30rem 10rem 30rem 10rem;
 }
 
 h2 {
